@@ -17,6 +17,7 @@ class _GuessPageState extends State<GuessPage> {
   int _value = 0;
   bool _guessing = false;
   bool? _isBig;
+  bool _isEnd = false;
 
   Random random = Random();
 
@@ -76,7 +77,7 @@ class _GuessPageState extends State<GuessPage> {
                 '点击生成随机数值',
               ),
               Text(
-                _guessing?'**':'$_value',
+                _guessing?'**':'猜对了 $_value',
                 style: const TextStyle(fontSize: 68,fontWeight: FontWeight.bold),
               ),
             ],
