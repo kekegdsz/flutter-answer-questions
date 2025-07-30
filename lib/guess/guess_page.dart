@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'guess_app_bar.dart';
+import 'result_notice.dart';
 
 class GuessPage extends StatefulWidget {
   const GuessPage({super.key, required this.title});
@@ -17,9 +18,9 @@ class _GuessPageState extends State<GuessPage> {
   int _value = 0;
   bool _guessing = false;
   bool? _isBig;
-  bool _isEnd = false;
 
   Random random = Random();
+
 
   void _generateRandomValue() {
     setState(() {
@@ -77,7 +78,7 @@ class _GuessPageState extends State<GuessPage> {
                 '点击生成随机数值',
               ),
               Text(
-                _guessing?'**':'猜对了 $_value',
+                _guessing?'**':'$_value',
                 style: const TextStyle(fontSize: 68,fontWeight: FontWeight.bold),
               ),
             ],
@@ -99,15 +100,6 @@ class _GuessPageState extends State<GuessPage> {
   }
 
   Widget _buildResultNotice(Color color, String info) {
-    return Expanded(
-        child: Container(
-      alignment: Alignment.center,
-      color: color,
-      child: Text(
-        info,
-        style: const TextStyle(
-            fontSize: 54, color: Colors.white, fontWeight: FontWeight.bold),
-      ),
-    ));
+    return ResultNotice(color: color, info: info);
   }
 }
