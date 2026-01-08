@@ -28,7 +28,7 @@ class _MuyuPageState extends State<MuyuPage> {
 
   final List<ImageOption> imageOptions = const [
     ImageOption('基础版', 'assets/images/muyu.png', 1, 3),
-    ImageOption('尊享版', 'assets/images/muyu_2.png', 3, 6),
+    ImageOption('尊享版', 'assets/images/muyu2.png', 3, 6),
   ];
 
   int _activeImageIndex = 0;
